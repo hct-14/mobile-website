@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               uid: currentUser.uid,
               name: currentUser.displayName || 'Khách hàng',
               email: currentUser.email || '',
-              role: currentUser.email === 'thanhpiosoft@gmail.com' ? 'admin' : 'customer',
+              role: (currentUser.email === 'thanhpiosoft@gmail.com' || currentUser.email === 'vuthily111102@gmail.com' || currentUser.email === 'admin@gmail.com') ? 'admin' : 'customer',
               createdAt: new Date().toISOString()
             } as any;
             await setDoc(userDocRef, newProfile);
@@ -62,7 +62,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return () => unsubscribe();
   }, []);
 
-  const isAdmin = profile?.role === 'admin' || user?.email === 'thanhpiosoft@gmail.com';
+  const isAdmin = profile?.role === 'admin' || user?.email === 'thanhpiosoft@gmail.com' || user?.email === 'vuthily111102@gmail.com' || user?.email === 'admin@gmail.com';
 
   return (
     <AuthContext.Provider value={{ user, profile, loading, isAdmin, isLoginModalOpen, setLoginModalOpen }}>

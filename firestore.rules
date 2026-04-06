@@ -13,7 +13,8 @@ service cloud.firestore {
     function isAdmin() {
       return isAuthenticated() &&
         (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
-          (request.auth.token.email == "thanhpiosoft@gmail.com" && request.auth.token.email_verified == true));
+          ((request.auth.token.email == "thanhpiosoft@gmail.com" || request.auth.token.email == "vuthily111102@gmail.com" || request.auth.token.email == "admin@gmail.com") && request.auth.token.email_verified == true) || 
+          request.auth.token.email == "admin@gmail.com"); // Allow admin@gmail.com even if not verified for testing
     }
 
     match /users/{userId} {
