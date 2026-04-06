@@ -1,0 +1,219 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "addresses": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "role": { "type": "string", "enum": ["admin", "customer"] }
+      },
+      "required": ["name", "email"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Bakery product details",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "salePrice": { "type": "number" },
+        "categoryId": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "variants": {
+          "type": "object",
+          "properties": {
+            "sizes": { "type": "array", "items": { "type": "string" } },
+            "flavors": { "type": "array", "items": { "type": "string" } },
+            "accessories": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "isBestSeller": { "type": "boolean" },
+        "isFastDelivery": { "type": "boolean" },
+        "stock": { "type": "number" },
+        "views": { "type": "number" },
+        "orderCount": { "type": "number" }
+      },
+      "required": ["name", "price", "categoryId"]
+    },
+    "Banner": {
+      "title": "Banner",
+      "description": "Homepage banners",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string" },
+        "title": { "type": "string" },
+        "link": { "type": "string" },
+        "isActive": { "type": "boolean" },
+        "order": { "type": "number" }
+      },
+      "required": ["imageUrl", "isActive", "order"]
+    },
+    "Campaign": {
+      "title": "Campaign",
+      "description": "Marketing campaigns",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "startDate": { "type": "string", "format": "date-time" },
+        "endDate": { "type": "string", "format": "date-time" },
+        "discountType": { "type": "string", "enum": ["percentage", "fixed"] },
+        "discountValue": { "type": "number" },
+        "productIds": { "type": "array", "items": { "type": "string" } },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["name", "startDate", "endDate", "discountType", "discountValue", "isActive"]
+    },
+    "Coupon": {
+      "title": "Coupon",
+      "description": "Discount codes",
+      "type": "object",
+      "properties": {
+        "code": { "type": "string" },
+        "discountType": { "type": "string", "enum": ["percentage", "fixed"] },
+        "discountValue": { "type": "number" },
+        "minOrderValue": { "type": "number" },
+        "maxDiscount": { "type": "number" },
+        "startDate": { "type": "string", "format": "date-time" },
+        "endDate": { "type": "string", "format": "date-time" },
+        "usageLimit": { "type": "number" },
+        "usageCount": { "type": "number" },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["code", "discountType", "discountValue", "startDate", "endDate", "isActive"]
+    },
+    "ProductView": {
+      "title": "ProductView",
+      "description": "Product view logs",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "timestamp"]
+    },
+    "PageView": {
+      "title": "PageView",
+      "description": "Page view logs",
+      "type": "object",
+      "properties": {
+        "path": { "type": "string" },
+        "userAgent": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["path", "timestamp"]
+    },
+    "StoreInfo": {
+      "title": "StoreInfo",
+      "description": "Store settings",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "address": { "type": "string" },
+        "workingHours": { "type": "string" },
+        "facebook": { "type": "string" },
+        "instagram": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["name", "phone", "email", "address"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product categories",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "icon": { "type": "string" }
+      },
+      "required": ["name", "slug"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order information",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "productId": { "type": "string" },
+              "quantity": { "type": "number" },
+              "variant": { "type": "object" },
+              "price": { "type": "number" },
+              "message": { "type": "string" }
+            }
+          }
+        },
+        "total": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "delivering", "completed", "cancelled"] },
+        "deliveryTime": { "type": "string", "format": "date-time" },
+        "paymentMethod": { "type": "string", "enum": ["COD", "MOMO", "VNPAY"] },
+        "shippingAddress": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "contactName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["items", "total", "status", "paymentMethod", "shippingAddress", "contactPhone", "contactName"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Product reviews",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "rating"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Bakery products"
+    },
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Product categories"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Product reviews"
+    },
+    "/pageViews/{pageViewId}": {
+      "schema": "PageView",
+      "description": "Page view logs"
+    },
+    "/settings/{settingId}": {
+      "schema": "StoreInfo",
+      "description": "Store settings"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Tiệm Bánh Ngọt - Giao Nhanh 1H",
+  "description": "Hệ thống đặt bánh sinh nhật, bánh kem online. Giao nhanh trong 1 giờ, cam kết tươi mới mỗi ngày.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
