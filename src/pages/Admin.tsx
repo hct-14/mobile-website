@@ -143,16 +143,16 @@ const Admin: React.FC = () => {
       if (prodsSnap.empty) {
         const demoProducts = [
           {
-            name: 'Bánh Kem Dâu Tây Premium',
-            description: 'Bánh kem dâu tây tươi với lớp kem béo ngậy và cốt bánh bông lan mềm mịn.',
-            price: 350000,
-            salePrice: 299000,
+            name: 'Bánh Sinh Nhật Dâu Tây Khổng Lồ',
+            description: 'Bánh kem tươi với lớp dâu tây tươi mọng nước, cốt bánh mềm mịn, ngọt thanh không gắt.',
+            price: 450000,
+            salePrice: 399000,
             categoryId: 'sinh-nhat',
-            images: ['https://picsum.photos/seed/strawberry-cake/800/800'],
+            images: ['https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Dâu tây', sizes: [{ name: '14cm', price: 299000 }, { name: '18cm', price: 399000 }] },
-                { name: 'Vani', sizes: [{ name: '14cm', price: 299000 }, { name: '18cm', price: 399000 }] }
+                { name: 'Dâu tây', sizes: [{ name: '16cm', price: 399000 }, { name: '20cm', price: 499000 }] },
+                { name: 'Vani', sizes: [{ name: '16cm', price: 399000 }, { name: '20cm', price: 499000 }] }
               ]
             },
             isBestSeller: true,
@@ -162,15 +162,14 @@ const Admin: React.FC = () => {
             orderCount: 45
           },
           {
-            name: 'Bánh Chocolate Galaxy',
-            description: 'Thiết kế dải ngân hà huyền bí với vị chocolate đậm đà từ Bỉ.',
-            price: 450000,
+            name: 'Bánh Chocolate Hạnh Nhân',
+            description: 'Bánh kem chocolate đậm vị, phủ hạt hạnh nhân rang thơm lừng, phù hợp cho người thích vị đắng nhẹ.',
+            price: 380000,
             categoryId: 'cho-nam',
-            images: ['https://picsum.photos/seed/galaxy-cake/800/800'],
+            images: ['https://images.unsplash.com/photo-1557925923-33b251d59000?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Chocolate', sizes: [{ name: '16cm', price: 450000 }, { name: '20cm', price: 550000 }] },
-                { name: 'Mocha', sizes: [{ name: '16cm', price: 450000 }, { name: '20cm', price: 550000 }] }
+                { name: 'Chocolate', sizes: [{ name: '16cm', price: 380000 }, { name: '20cm', price: 480000 }] }
               ]
             },
             isBestSeller: true,
@@ -180,15 +179,14 @@ const Admin: React.FC = () => {
             orderCount: 30
           },
           {
-            name: 'Bánh Công Chúa Hồng',
-            description: 'Mẫu bánh búp bê công chúa dành riêng cho các bé gái, trang trí lộng lẫy.',
-            price: 550000,
-            categoryId: 'cho-be',
-            images: ['https://picsum.photos/seed/princess-cake/800/800'],
+            name: 'Bánh Kem Trái Cây Nhiệt Đới',
+            description: 'Cốt bánh vani kết hợp cùng các loại trái cây tươi mát: xoài, dâu, kiwi, đào.',
+            price: 400000,
+            categoryId: 'sinh-nhat',
+            images: ['https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Dâu tây', sizes: [{ name: '18cm', price: 550000 }, { name: '22cm', price: 650000 }] },
-                { name: 'Vani', sizes: [{ name: '18cm', price: 550000 }, { name: '22cm', price: 650000 }] }
+                { name: 'Trái cây tổng hợp', sizes: [{ name: '18cm', price: 400000 }, { name: '22cm', price: 500000 }] }
               ]
             },
             isBestSeller: false,
@@ -198,15 +196,14 @@ const Admin: React.FC = () => {
             orderCount: 12
           },
           {
-            name: 'Bánh Siêu Nhân Anh Hùng',
-            description: 'Bánh kem tạo hình siêu nhân mạnh mẽ cho các bé trai năng động.',
-            price: 520000,
-            categoryId: 'cho-be',
-            images: ['https://picsum.photos/seed/superhero-cake/800/800'],
+            name: 'Bánh Tiramisu Ý Cổ Điển',
+            description: 'Hương vị cà phê nồng nàn quyện cùng lớp kem mascarpone mềm mịn.',
+            price: 320000,
+            categoryId: 'sinh-nhat',
+            images: ['https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Chocolate', sizes: [{ name: '18cm', price: 520000 }, { name: '22cm', price: 620000 }] },
-                { name: 'Vani', sizes: [{ name: '18cm', price: 520000 }, { name: '22cm', price: 620000 }] }
+                { name: 'Cà phê truyền thống', sizes: [{ name: '14cm', price: 320000 }, { name: '18cm', price: 420000 }] }
               ]
             },
             isBestSeller: true,
@@ -216,16 +213,15 @@ const Admin: React.FC = () => {
             orderCount: 55
           },
           {
-            name: 'Bánh Hoa Hồng Lãng Mạn',
-            description: 'Trang trí hoa kem bơ tinh xảo, món quà ý nghĩa cho phái đẹp.',
+            name: 'Bánh Red Velvet Lãng Mạn',
+            description: 'Bánh nhung đỏ lãng mạn với lớp kem phô mai chua ngọt hài hòa.',
             price: 420000,
             salePrice: 380000,
             categoryId: 'cho-nu',
-            images: ['https://picsum.photos/seed/rose-cake/800/800'],
+            images: ['https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Trà xanh', sizes: [{ name: '16cm', price: 380000 }, { name: '20cm', price: 480000 }] },
-                { name: 'Vani', sizes: [{ name: '16cm', price: 380000 }, { name: '20cm', price: 480000 }] }
+                { name: 'Red Velvet', sizes: [{ name: '16cm', price: 380000 }, { name: '20cm', price: 480000 }] }
               ]
             },
             isBestSeller: true,
@@ -235,15 +231,14 @@ const Admin: React.FC = () => {
             orderCount: 80
           },
           {
-            name: 'Bánh Kỷ Niệm Ngày Cưới Gold',
-            description: 'Thiết kế sang trọng với tông màu vàng gold, biểu tượng cho tình yêu vĩnh cửu.',
-            price: 650000,
-            categoryId: 'ky-niem',
-            images: ['https://picsum.photos/seed/anniversary-cake/800/800'],
+            name: 'Bánh Matcha Trà Xanh Nhật Bản',
+            description: 'Sử dụng bột matcha Uji cao cấp, vị chát nhẹ, thơm lừng, không quá ngọt.',
+            price: 360000,
+            categoryId: 'sinh-nhat',
+            images: ['https://images.unsplash.com/photo-1515037893149-de7f840978e2?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Vani Red Velvet', sizes: [{ name: '20cm', price: 650000 }, { name: '24cm', price: 750000 }] },
-                { name: 'Phô mai', sizes: [{ name: '20cm', price: 650000 }, { name: '24cm', price: 750000 }] }
+                { name: 'Matcha', sizes: [{ name: '16cm', price: 360000 }, { name: '20cm', price: 460000 }] }
               ]
             },
             isBestSeller: false,
@@ -253,14 +248,14 @@ const Admin: React.FC = () => {
             orderCount: 8
           },
           {
-            name: 'Combo Trà Chiều & Bánh Ngọt',
-            description: 'Set quà tặng gồm trà hoa cúc và 6 chiếc bánh cupcake đa dạng hương vị.',
-            price: 280000,
-            categoryId: 'combo',
-            images: ['https://picsum.photos/seed/tea-combo/800/800'],
+            name: 'Bánh Kem Macaron',
+            description: 'Trang trí với những chiếc bánh macaron ngọt ngào, đầy màu sắc.',
+            price: 480000,
+            categoryId: 'cho-be',
+            images: ['https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80'],
             variants: { 
               flavors: [
-                { name: 'Mix 6 vị', sizes: [{ name: 'Set Standard', price: 280000 }] }
+                { name: 'Vani', sizes: [{ name: '18cm', price: 480000 }] }
               ]
             },
             isBestSeller: true,
@@ -268,23 +263,6 @@ const Admin: React.FC = () => {
             stock: 20,
             views: 150,
             orderCount: 60
-          },
-          {
-            name: 'Bánh Tiramisu Ý Cổ Điển',
-            description: 'Hương vị cà phê nồng nàn quyện cùng lớp kem mascarpone mềm mịn.',
-            price: 320000,
-            categoryId: 'sinh-nhat',
-            images: ['https://picsum.photos/seed/tiramisu/800/800'],
-            variants: { 
-              flavors: [
-                { name: 'Cà phê truyền thống', sizes: [{ name: '14cm', price: 320000 }, { name: '18cm', price: 420000 }] }
-              ]
-            },
-            isBestSeller: false,
-            isFastDelivery: true,
-            stock: 15,
-            views: 210,
-            orderCount: 25
           }
         ];
         for (const prod of demoProducts) {
